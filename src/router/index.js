@@ -16,7 +16,7 @@ const routes = [
 				component: RepoList,
 			},
 			{
-				path: '/repo/:id',
+				path: '/repo/:name',
 				name: 'repo-details',
 				component: RepoDetails,
 			},
