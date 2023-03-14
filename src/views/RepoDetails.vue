@@ -23,12 +23,14 @@
 
                         <div class="grid sm:grid-cols-6 grid-cols-1 gap-2 items-start">
                             <h2 class="text-textGreen font-bold text-[18px] col-span-2">Updated At</h2>
-                            <p class="text-textGreen col-span-4">{{ repo?.updated_at || "-" }}</p>
+                            <p class="text-textGreen col-span-4">{{ repo?.updated_at &&
+                                moment(repo?.updated_at).format("MMMM Do YYYY, h:mm:ss a") || "-" }}</p>
                         </div>
 
                         <div class="grid sm:grid-cols-6 grid-cols-1 gap-2 items-start">
                             <h2 class="text-textGreen font-bold text-[18px] col-span-2">Pushed At</h2>
-                            <p class="text-textGreen col-span-4">{{ repo?.pushed_at || "-" }}</p>
+                            <p class="text-textGreen col-span-4">{{ repo?.pushed_at &&
+                                moment(repo?.pushed_at).format("MMMM Do YYYY, h:mm:ss a") || "-" }}</p>
                         </div>
 
                         <div class="grid sm:grid-cols-6 grid-cols-1 gap-2 items-start">
@@ -57,6 +59,7 @@
 import axiosClient from "../axiosClient";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import moment from "moment"
 
 export default {
     setup() {
@@ -80,7 +83,7 @@ export default {
             fetchRepo();
         });
 
-        return { repo };
+        return { repo, moment };
     },
 };
 </script>
