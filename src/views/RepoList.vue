@@ -59,4 +59,5 @@ onMounted(() => {
 watch(currentPage, () => {
   fetchRepos();
 })
+
 </script>

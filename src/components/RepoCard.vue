@@ -8,8 +8,8 @@
             </h2>
             <p class="text-textGreen">{{ repo?.description || "No descripton" }}</p>
             <div class="card-actions justify-end">
-                <router-link :to="{ name: 'repo-details', params: { name: repo.name } }">
-                    <div class="badge badge-outline badge-lg cursor-pointer">View</div>
+                <router-link :to="{ name: 'repo-details', params: { name: repo?.name } }">
+                    <div class="badge badge-outline border border-secondary badge-lg cursor-pointer p-4">View</div>
                 </router-link>
 
                 <!-- <div class="badge badge-outline">Products</div> -->
@@ -19,10 +19,10 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 
 const props = defineProps({
     repo: Object,
     index: Number,
 })
+
 </script>
