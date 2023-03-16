@@ -1,5 +1,8 @@
 <template>
-    <div class="w-full mt-5">
+    <div v-if="loading" class="flex justify-center mt-10">
+        <div class="">Loading...</div>
+      </div>
+    <div v-else class="w-full mt-5">
         <div class="card bg-gradient bg-base-100 shadow-xl">
             <div class="card-body">
                 <h1 class="card-title uppercase text-secondary font-bold text-[24px]">{{ repo?.name }}</h1>
